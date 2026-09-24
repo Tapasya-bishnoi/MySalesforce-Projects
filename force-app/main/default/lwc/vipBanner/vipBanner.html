@@ -1,0 +1,21 @@
+<template>
+    <template if:true={isVip}>
+        <div class="vipBanner slds-box">
+            <div class="header">
+                ⭐ VIP CUSTOMER
+            </div>
+
+            <div class="content">
+                <p>
+                    <strong>Reason:</strong>
+                    <span>{vipReason}</span>
+                </p>
+
+                <p>
+                    <strong>VIP Since:</strong>
+                    <span>{vipSinceDate}</span>
+                </p>
+            </div>
+        </div>
+    </template>
+</template>

@@ -1,0 +1,23 @@
+.banner{
+
+    background:#ba0517;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:5px;
+
+    font-weight:bold;
+
+    text-align:center;
+
+}
+
+.quote{
+
+    padding:12px;
+
+    border-bottom:1px solid #ddd;
+
+}

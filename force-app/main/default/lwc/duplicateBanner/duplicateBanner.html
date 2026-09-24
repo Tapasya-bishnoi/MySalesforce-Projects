@@ -1,0 +1,10 @@
+<template>
+    <template if:true={isDuplicate}>
+        <div class="banner">
+            ⚠️ This Contact is marked as a Duplicate Contact.
+            <a href={duplicateContactUrl}>
+                Click here to view the original contact.
+            </a>
+        </div>
+    </template>
+</template>

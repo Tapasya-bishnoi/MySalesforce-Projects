@@ -1,0 +1,13 @@
+<template>
+   
+    <Lightning-card title="parent-child">
+        
+      <p><Lightning-input  label="Set Counter" type="number" min="0"  max="100000"  value={startCounter} onchange={handleStartChange}>
+           </Lightning-input> </p>
+   
+
+           <Lightning-button lable="add100" onclick={addChange}></Lightning-button>
+  
+    <c-parent-Child counter ={startCounter}></c-parent-Child>>
+ </Lightning-card>
+</template>

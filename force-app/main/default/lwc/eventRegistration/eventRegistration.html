@@ -1,0 +1,22 @@
+<template>
+
+
+    <div>
+         <lightning-input label="email" value={Email} onchange={emailhandle}></lightning-input>
+        <lightning-input label="Name" value={Name} onchange={namehandle}></lightning-input>
+        <lightning-input label="RegistrationStatus" value={registrationStatus} onchange={registrationstatushandle}></lightning-input>
+<lightning-combobox
+    label="Associated Event"
+    value={AssociatedEvent}
+    options={eventOptions}
+    onchange={associatedhandle}>
+</lightning-combobox>
+    <lightning-button label="submit form" onclick={registration} variant="brand"></lightning-button>
+
+
+
+
+
+    </div>
+    
+</template>

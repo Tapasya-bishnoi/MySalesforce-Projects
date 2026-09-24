@@ -1,0 +1,140 @@
+<template>
+
+    <div class="page-container">
+
+        <lightning-card
+            title="Service Request Console"
+            icon-name="standard:case">
+
+
+                <!-- NEW CASE BUTTON -->
+
+                <lightning-button
+                    label="New Case"
+                    icon-name="utility:add"
+                    variant="brand"
+                    onclick={handleNewCase}>
+                </lightning-button>
+
+
+            <template if:true={showDeleteButton}>
+
+                    <lightning-button
+                        label="Delete"
+                        icon-name="utility:delete"
+                        variant="destructive"
+                        onclick={handleDelete}>
+                    </lightning-button>
+
+                </template>
+
+            <!-- SEARCH & FILTER SECTION -->
+            <div class="filter-container">
+
+                <!-- SEARCH -->
+                <div class="search-container">
+
+                    <lightning-input
+                        type="search"
+                        label="Search Request"
+                        placeholder="Search by Case Number or Subject"
+                        value={searchKey}
+                        onchange={handleSearch}>
+                    </lightning-input>
+
+                </div>
+
+
+                <!-- FILTERS -->
+                <div class="filter-row">
+
+                    <!-- STATUS -->
+                    <div class="filter-item">
+
+                        <lightning-combobox
+                            label="Status"
+                            value={status}
+                            options={statusOptions}
+                            onchange={handleStatusChange}>
+                        </lightning-combobox>
+
+                    </div>
+
+
+                    <!-- PRIORITY -->
+                    <div class="filter-item">
+
+                        <lightning-combobox
+                            label="Priority"
+                            value={priority}
+                            options={priorityOptions}
+                            onchange={handlePriorityChange}>
+                        </lightning-combobox>
+
+                    </div>
+
+
+                    <!-- ORIGIN -->
+                    <div class="filter-item">
+
+                        <lightning-combobox
+                            label="Origin"
+                            value={origin}
+                            options={originOptions}
+                            onchange={handleOriginChange}>
+                        </lightning-combobox>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABLE -->
+            <div class="table-container">
+
+         <lightning-datatable
+                 key-field="Id"
+               data={cases}
+              columns={columns}
+              onsort={handleSort}
+              sorted-by={sortBy}
+              sorted-direction={sortDirectionForTable}
+             onrowaction={handleRowAction}
+            onrowselection={handleRowSelection}>
+        </lightning-datatable>
+
+            </div>
+
+
+            <!-- PAGINATION -->
+            <div class="pagination-container">
+
+                <lightning-button
+                    label="Previous"
+                    onclick={handlePrevious}
+                    disabled={previousDisabled}>
+                </lightning-button>
+
+
+                <span class="page-info">
+
+                    Page {pageNumber} of {totalPages}
+
+                </span>
+
+
+                <lightning-button
+                    label="Next"
+                    onclick={handleNext}
+                    disabled={nextDisabled}>
+                </lightning-button>
+
+            </div>
+
+        </lightning-card>
+
+    </div>
+
+</template>

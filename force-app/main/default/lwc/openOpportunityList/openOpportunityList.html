@@ -1,0 +1,80 @@
+<template>
+// OPEN OPPORTUNITY LIST 
+<template if:false={showActionPage}>
+
+ <lightning-card title="Open Opportunities">
+
+            <div class="slds-p-around_medium">
+
+                //Header Row 
+                <div class="slds-grid slds-p-around_small slds-border_bottom">
+
+                    <div class="slds-col slds-size_4-of-12">
+                        <strong>Opportunity</strong>
+                    </div>
+
+                    <div class="slds-col slds-size_4-of-12">
+                        <strong>Stage</strong>
+                    </div>
+
+                    <div class="slds-col slds-size_4-of-12">
+                        <strong>Action</strong>
+                    </div>
+
+                </div>
+
+
+        //Opportunity Rows 
+        <template for:each={opportunities} for:item="opp">
+                    
+          <div key={opp.Id}  class="slds-grid slds-p-around_small slds-border_bottom">
+                       
+            //Opportunity Name 
+            <div class="slds-col slds-size_4-of-12">
+            <strong>{opp.Name}</strong>
+            </div>
+
+
+             //Stage 
+            <div class="slds-col slds-size_4-of-12">
+            {opp.StageName} </div>
+                        
+          // Action 
+          <div class="slds-col slds-size_4-of-12">
+
+          <lightning-button label="Action"  data-id={opp.Id} onclick={handleAction}></lightning-button>
+            </div>
+            </div>
+
+            </template>
+
+            </div>
+
+        </lightning-card>
+
+    </template>
+
+  //OPPORTUNITY ACTION PAGE 
+   
+ <template if:true={showActionPage}>
+  <lightning-card title="Opportunity Action">
+    <div class="slds-p-around_medium">
+     <p class="slds-m-bottom_medium">
+    <strong>Selected Opportunity:</strong>
+        {selectedOpportunityName}</p>
+
+                
+
+        //Closed Won 
+<lightning-button label="Closed Won"  variant="brand" onclick={handleWon}></lightning-button>
+                    
+                   
+        //Closed Lost 
+<lightning-button label="Closed Lost" variant="destructive"  onclick={handleLost} class="slds-m-left_small"></lightning-button>
+        </div>
+
+    </lightning-card>
+
+  </template>
+
+</template>

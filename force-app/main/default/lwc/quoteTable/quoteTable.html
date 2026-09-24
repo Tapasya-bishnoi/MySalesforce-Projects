@@ -1,0 +1,18 @@
+<template>
+      <lightning-button
+        label="View All Quotes"
+        variant="brand"
+        onclick={handleViewAllQuotes}>
+    </lightning-button>
+
+   
+
+        <lightning-datatable
+            key-field="Id"
+            data={quotes}
+            columns={columns}>
+        </lightning-datatable>
+
+   
+
+</template>

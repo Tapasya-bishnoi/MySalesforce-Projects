@@ -1,0 +1,153 @@
+<aura:component
+    implements="force:lightningQuickAction"
+    access="global"
+    controller="OpportunityGlobalActionController">
+
+    <!-- Initialization -->
+    <aura:handler
+        name="init"
+        value="{!this}"
+        action="{!c.doInit}"/>
+
+
+    <!-- Record Type Options -->
+    <aura:attribute
+        name="recordTypeOptions"
+        type="List"
+        default="[]"/>
+
+
+    <!-- Selected Record Type -->
+    <aura:attribute
+        name="selectedRecordTypeId"
+        type="String"/>
+
+
+    <!-- Show Opportunity Form -->
+    <aura:attribute
+        name="showOpportunityForm"
+        type="Boolean"
+        default="false"/>
+
+
+    <!-- =============================== -->
+    <!-- RECORD TYPE SELECTION -->
+    <!-- =============================== -->
+
+    <aura:if isTrue="{!not(v.showOpportunityForm)}">
+
+        <div class="slds-p-around_medium">
+
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                New Opportunity
+            </h2>
+
+            <lightning:combobox
+                name="recordType"
+                label="Opportunity Record Type"
+                placeholder="Select Record Type"
+                options="{!v.recordTypeOptions}"
+                value="{!v.selectedRecordTypeId}"
+                onchange="{!c.handleRecordTypeChange}"
+                required="true"/>
+
+
+            <div class="slds-m-top_medium">
+
+                <lightning:button
+                    variant="brand"
+                    label="Next"
+                    onclick="{!c.handleNext}"/>
+
+            </div>
+
+        </div>
+
+
+        <!-- =============================== -->
+        <!-- OPPORTUNITY FORM -->
+        <!-- =============================== -->
+
+        <aura:set attribute="else">
+
+            <lightning:recordEditForm
+                objectApiName="Opportunity"
+                recordTypeId="{!v.selectedRecordTypeId}"
+                onsuccess="{!c.handleSuccess}"
+                onerror="{!c.handleError}">
+
+                <lightning:messages/>
+
+                <div class="slds-p-around_medium">
+
+                    <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                        New Opportunity
+                    </h2>
+
+
+                    <!-- Opportunity Name -->
+                    <lightning:inputField
+                        fieldName="Name"
+                        required="true"/>
+
+
+                    <!-- Close Date -->
+                    <lightning:inputField
+                        fieldName="CloseDate"
+                        required="true"/>
+
+
+                    <!-- Stage -->
+                    <lightning:inputField
+                        fieldName="StageName"
+                        required="true"/>
+
+
+                    <!-- Amount -->
+                    <lightning:inputField
+                        fieldName="Amount"/>
+
+
+                    <!-- Account -->
+                    <lightning:inputField
+                        fieldName="AccountId"/>
+
+
+                    <!-- Owner -->
+                    <lightning:inputField
+                        fieldName="OwnerId"/>
+
+
+                    <!-- Type -->
+                    <lightning:inputField
+                        fieldName="Type"/>
+
+
+                    <!-- Lead Source -->
+                    <lightning:inputField
+                        fieldName="LeadSource"/>
+
+
+                    <!-- Description -->
+                    <lightning:inputField
+                        fieldName="Description"/>
+
+
+                    <div class="slds-m-top_medium">
+
+                        <lightning:button
+                            type="submit"
+                            variant="brand"
+                            label="Save"/>
+
+                    </div>
+
+                </div>
+
+            </lightning:recordEditForm>
+
+        </aura:set>
+
+    </aura:if>
+
+</aura:component>

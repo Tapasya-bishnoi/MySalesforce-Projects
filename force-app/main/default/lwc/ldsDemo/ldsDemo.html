@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="LDS Demo">
+
+        <template if:true={contact.data}>
+            <div class="slds-p-around_medium">
+
+                <p><b>First Name:</b> {firstName}</p>
+                <p><b>Last Name:</b> {lastName}</p>
+                <p><b>Email:</b> {email}</p>
+                <p><b>Phone:</b> {phone}</p>
+
+            </div>
+        </template>
+
+    </lightning-card>
+</template>

@@ -1,0 +1,115 @@
+.page-container {
+    padding: 20px;
+}
+
+.details-container {
+    padding: 10px 20px 20px 20px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
+    row-gap: 25px;
+}
+
+.detail-field {
+    width: 100%;
+}
+
+
+/* DESCRIPTION */
+
+.description-field {
+    grid-column: 1 / -1;
+}
+
+.description-label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #181818;
+
+    margin-bottom: 6px;
+}
+
+
+/* DESCRIPTION BOX */
+
+.description-box {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 220px;
+
+    border: 1px solid #747474;
+
+    border-radius: 6px;
+
+    background-color: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* DESCRIPTION TEXT */
+
+.description-input {
+    width: 100%;
+}
+
+
+/* ATTACHMENT */
+
+.attachment-area {
+    position: absolute;
+
+    left: 10px;
+
+    bottom: 8px;
+
+    z-index: 10;
+
+    background-color: #ffffff;
+
+    padding: 2px 5px;
+}
+
+
+/* BUTTONS */
+
+.button-container {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 20px;
+
+    margin-top: 35px;
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 768px) {
+
+    .details-grid {
+
+        grid-template-columns: 1fr;
+
+        column-gap: 0;
+
+    }
+
+
+    .description-field {
+
+        grid-column: 1;
+
+    }
+
+}

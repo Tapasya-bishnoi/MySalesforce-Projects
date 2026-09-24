@@ -1,0 +1,186 @@
+<template>
+
+    <div class="page-container">
+
+        <lightning-card
+            title="Request Details"
+            icon-name="standard:case">
+
+            <div class="details-container">
+
+                <lightning-record-edit-form
+                    record-id={recordId}
+                    object-api-name="Case"
+                    onload={handleFormLoad}
+                    onsubmit={handleSubmit}
+                    onsuccess={handleSuccess}
+                    onerror={handleError}>
+
+                    <div class="details-grid">
+
+                        <!-- CASE NUMBER -->
+
+                        <div class="detail-field">
+
+                            <lightning-input-field
+                                field-name="CaseNumber"
+                                disabled>
+                            </lightning-input-field>
+
+                        </div>
+
+
+                        <!-- SUBJECT -->
+
+                        <div class="detail-field">
+
+                            <lightning-input-field
+                                field-name="Subject">
+                            </lightning-input-field>
+
+                        </div>
+
+
+                        <!-- STATUS -->
+
+                        <div class="detail-field">
+
+                            <lightning-input-field
+                                field-name="Status">
+                            </lightning-input-field>
+
+                        </div>
+
+
+                        <!-- PRIORITY -->
+
+                        <div class="detail-field">
+
+                            <lightning-input-field
+                                field-name="Priority">
+                            </lightning-input-field>
+
+                        </div>
+
+
+                        <!-- ORIGIN -->
+
+                        <div class="detail-field">
+
+                            <lightning-input-field
+                                field-name="Origin">
+                            </lightning-input-field>
+
+                        </div>
+
+
+                        <!-- ACCOUNT -->
+
+                        <div class="detail-field">
+
+                            <lightning-input-field
+                                field-name="AccountId">
+                            </lightning-input-field>
+
+                        </div>
+
+
+                        <!-- CONTACT -->
+
+                        <div class="detail-field">
+
+                            <lightning-input-field
+                                field-name="ContactId">
+                            </lightning-input-field>
+
+                        </div>
+
+
+                        <!-- CASE OWNER -->
+
+                        <div class="detail-field">
+
+                            <lightning-record-picker
+                                label="Case Owner"
+                                object-api-name="User"
+                                value={ownerId}
+                                placeholder="Search Users..."
+                                onchange={handleOwnerChange}>
+                            </lightning-record-picker>
+
+                        </div>
+
+
+                        <!-- DESCRIPTION + ATTACHMENT -->
+
+                        <div class="detail-field description-field">
+
+                            <label class="description-label">
+                                Description
+                            </label>
+
+                            <div class="description-box">
+
+                                <!-- DESCRIPTION -->
+
+                                <lightning-textarea
+                                    variant="label-hidden"
+                                    value={description}
+                                    onchange={handleDescriptionChange}
+                                    class="description-input">
+                                </lightning-textarea>
+
+
+                                <!-- ATTACHMENT -->
+
+                                <div class="attachment-area">
+
+                                    <lightning-file-upload
+                                        label="Add Attachment"
+                                        name="fileUploader"
+                                        record-id={recordId}
+                                        accept={acceptedFormats}
+                                        onuploadfinished={handleUploadFinished}
+                                        multiple>
+                                    </lightning-file-upload>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BUTTONS -->
+
+                    <div class="button-container">
+
+                        <!-- BACK -->
+
+                        <lightning-button
+                            label="Back"
+                            onclick={handleCancel}>
+                        </lightning-button>
+
+
+                        <!-- SAVE -->
+
+                        <lightning-button
+                            variant="brand"
+                            type="submit"
+                            label="Save">
+                        </lightning-button>
+
+                    </div>
+
+                </lightning-record-edit-form>
+
+            </div>
+
+        </lightning-card>
+
+    </div>
+
+</template>

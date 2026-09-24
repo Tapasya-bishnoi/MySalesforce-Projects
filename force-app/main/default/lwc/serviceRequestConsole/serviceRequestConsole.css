@@ -1,0 +1,82 @@
+.page-container {
+    padding: 1rem;
+    background: #f4f6f9;
+    min-height: 100vh;
+}
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+/* Search and Filter Section */
+.filter-container {
+    padding: 1rem;
+    background: white;
+}
+
+.search-container {
+    max-width: 500px;
+    margin-bottom: 1rem;
+}
+
+/* Filters in one row */
+.filter-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.filter-item {
+    flex: 1;
+}
+
+/* Datatable */
+.table-container {
+    margin-top: 1rem;
+    background: white;
+    padding: 0.5rem;
+    overflow-x: auto;
+}
+
+/* Pagination */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    background: white;
+}
+
+.page-info {
+    font-weight: 600;
+    min-width: 100px;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+
+    .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-item {
+        width: 100%;
+    }
+
+    .search-container {
+        max-width: 100%;
+    }
+
+    .pagination-container {
+        gap: 0.75rem;
+    }
+}
