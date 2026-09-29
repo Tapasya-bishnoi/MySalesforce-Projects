@@ -1,7 +1,8 @@
-public with sharing class DeleteOldLeads implements Database.Batchable<SObject> {
+public with sharing class DeleteOldLeads
+    implements Database.Batchable<SObject> {
 
     // START METHOD
-    public Database.QueryLocator start( Database.BatchableContext context){
+    public Database.QueryLocator start(  Database.BatchableContext context){
 
         // Find unconverted Leads not modified for more than 2 years
         String query = 'SELECT Id, Name, LastModifiedDate, IsConverted ' +'FROM Lead ' +'WHERE IsConverted = false ' +'AND CreatedDate = TODAY';

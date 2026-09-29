@@ -16,16 +16,11 @@ public class DuplicateContact{
             return;
         }
         
-       // Map<String , Contact> mc = new Map<String , Contact>();
         
      List<Contact> lc =[SELECT Id,Salutation, FirstName,LastName, Email FROM Contact WHERE Email IN :emails];
 
         
-       // for(Contact cn : lc){
-          //  if(!mc.containsKey(cn.Email)){
-            //  mc.put(cn.Email ,cn);
-            //}
-       // }
+      
         
    List<Contact> lc1 = new List<Contact>();// Contact to update. 
         

@@ -15,7 +15,10 @@ public with sharing class OpenOpportunity {
 
     // Update Opportunity Stage
     @AuraEnabled
-    public static void updateOpportunityStage(Id opportunityId,String stage) {
+    public static void updateOpportunityStage(
+        Id opportunityId,
+        String stage
+    ) {
 
         if (stage != 'Closed Won' && stage != 'Closed Lost') {
             throw new AuraHandledException('Invalid Stage');

@@ -20,6 +20,9 @@ public class AccountBatch implements Database.Batchable<SObject> {
     }
 
     public void finish(Database.BatchableContext bc) {
+        
+            System.enqueueJob(new QueueEx());
+          CallingExm.sum();
         System.debug('Batch Completed');
     }
 }

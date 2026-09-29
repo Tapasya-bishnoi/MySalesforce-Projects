@@ -3,15 +3,10 @@ global class DuplicateCleanupScheduler implements Schedulable {
     global void execute(SchedulableContext sc) {
 
         List<Contact> duplicateContacts = [
-            SELECT Id,
-                   Oiginal_Contact__c,
-                   Duplicate_Detected_On__c
-            FROM Contact
-            WHERE Is_Duplicate__c = true
-            AND Duplicate_Detected_On__c <= :System.now().addMinutes(-1)
+            SELECT Id, Oiginal_Contact__c, Duplicate_Detected_On__c FROM Contact  WHERE Is_Duplicate__c = true AND Duplicate_Detected_On__c <= :System.now().addMinutes(-1)
         ];
 
-        if (duplicateContacts.isEmpty()) {
+        if (duplicateContacts.isEmpty()){
             return;
         }
 

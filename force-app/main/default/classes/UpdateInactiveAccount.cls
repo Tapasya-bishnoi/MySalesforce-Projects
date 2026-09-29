@@ -3,8 +3,12 @@ public with sharing class UpdateInactiveAccount  implements Database.Batchable<S
     // START METHOD
     public Database.QueryLocator start( Database.BatchableContext context) {
 
-        String query ='SELECT Id, Active__c, Status__c ' + 'FROM Account ' + 'WHERE Active__c = \'No\'';
-             return Database.getQueryLocator(query);
+        String query =
+            'SELECT Id, Active__c, Status__c ' +
+            'FROM Account ' +
+            'WHERE Active__c = \'No\'';
+
+        return Database.getQueryLocator(query);
     }
 
 

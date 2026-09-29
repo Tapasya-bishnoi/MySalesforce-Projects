@@ -1,4 +1,4 @@
- global class OpportunityBatch implements Database.Batchable<SObject>, Database.Stateful {
+global class OpportunityBatch implements Database.Batchable<SObject>, Database.Stateful {
  
     // These variables will retain their values
     // across multiple execute() transactions
@@ -13,7 +13,8 @@
     }
  
     // 2. EXECUTE METHOD
-    global void execute(Database.BatchableContext bc, List<Opportunity> scope) {
+    global void execute(Database.BatchableContext bc, List<Opportunity> scope
+    ) {
         // Example: processing the Opportunities
         for (Opportunity opp : scope) {
             opp.Description = 'Processed by Batch Apex';
@@ -22,7 +23,8 @@
  
         // Database.update with allOrNone = false
         // allows some records to succeed even if others fail
-        Database.SaveResult[] results = Database.update(scope, false);
+        Database.SaveResult[] results =
+            Database.update(scope, false);
  
         // Count successful and failed records
         for (Database.SaveResult result : results) {
@@ -37,7 +39,9 @@
  
     // 3. FINISH METHOD
     global void finish(Database.BatchableContext bc) {
- 
+           
+        CallingExm.sum();
+        System.debug('this is batch future ');
         // Create email
         Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
  
