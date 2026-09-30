@@ -57,3 +57,72 @@ Transform your ideas into custom Lightning apps that extend CRM workflows direct
 - [Salesforce VS Code Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
 
 # MySalesforce-Projects
+
+# Order Validation Failure Response Flow
+
+## Overview
+
+When the Inventory Validation API responds that inventory is not available, the
+`OrderValidationQueueable` does not directly send a notification.
+
+Instead, it publishes the `Order_Validation_Failed__e` Platform Event.
+
+A Platform Event-Triggered Flow listens for this event and handles the business
+response by retrieving the related Order and sending a notification to the
+appropriate queue/users.
+
+## Failure Flow Architecture
+
+Order Activated
+      ↓
+Record-Triggered Flow
+      ↓
+OrderSyncInvocable
+      ↓
+OrderValidationQueueable
+      ↓
+Inventory Validation API
+      ↓
+Inventory unavailable
+      ↓
+publishFailureEvent()
+      ↓
+Order_Validation_Failed__e
+      ↓
+Platform Event-Triggered Flow
+      ↓
+Get Related Order
+      ↓
+Send Custom Notification
+
+
+## Platform Event
+
+### Event Name
+
+`Order Validation Failed`
+
+### API Name
+
+`Order_Validation_Failed__e`
+
+### Fields
+
+| Field | API Name | Purpose |
+|---|---|---|
+| Order Id | `OrderId__c` | Stores the Salesforce Order Id |
+| Order Number | `OrderNumber__c` | Stores the Order Number |
+| Failure Reason | `Failure_Reason__c` | Stores the reason for validation failure |
+| Retry Count | `Retry_Count__c` | Stores the number of retries performed |
+
+## Apex Event Publishing
+
+The `OrderValidationQueueable` calls the following method when inventory
+validation fails:
+
+```apex
+publishFailureEvent(
+    ord,
+    result.message,
+    retryCount
+);
