@@ -86,6 +86,7 @@ Get Related Order
 
 Send Custom Notification
 
+1.3
 ## Platform Event
 
 ### Event Name
@@ -106,7 +107,6 @@ Send Custom Notification
 | Retry Count | `Retry_Count__c` | Stores the number of retries performed |
 
 
-1.3
 ## Apex Event Publishing
 
 The `OrderValidationQueueable` calls the following method when inventory validation fails:
