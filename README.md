@@ -105,6 +105,8 @@ Send Custom Notification
 | Failure Reason | `Failure_Reason__c` | Stores the reason for validation failure |
 | Retry Count | `Retry_Count__c` | Stores the number of retries performed |
 
+
+1.3
 ## Apex Event Publishing
 
 The `OrderValidationQueueable` calls the following method when inventory validation fails:
