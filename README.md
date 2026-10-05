@@ -117,3 +117,12 @@ publishFailureEvent(
     result.message,
     retryCount
 );
+5.4
+## Testing and Troubleshooting
+
+Validation
+
+```Tested the end-to-end Platform Event flow from Apex event publishing to Flow execution.
+  Verified the event field mapping between Apex and the subscriber Flow.
+  Checked the failure-handling scenarios and notification process.
+  Worked on troubleshooting and refining the event flow to ensure reliable processing.
