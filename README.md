@@ -119,8 +119,7 @@ publishFailureEvent(
 );
 
 5.4
-## Testing and Troubleshooting
-
+## **TESTING AND TROUBLESHOOTING**
 Validation
 
 ```Tested the end-to-end Platform Event flow from Apex event publishing to Flow execution.
@@ -130,5 +129,5 @@ Validation
 
 
   6.5
-  ## AgentForce 
+ ## **AGENTFORCE**
 ```Started learning Salesforce Agentforce and exploring its fundamentals, including Agentforce concepts, agent setup, topics, actions, and how AI agents can automate business processes within Salesforce.
