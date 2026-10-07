@@ -47,7 +47,9 @@ public with sharing class OrderFulfillmentQueueable implements Queueable {
             ord.FulfillmentEventPublished__c != true
         ) {
             String fulfillmentKey ='ORDER-' + String.valueOf(orderId);
-            OrderFullfillment__e fulfillmentEvent =new OrderFullfillment__e(Fulfillment_Key__c =fulfillmentKey,Order_Id__c =String.valueOf(orderId),
+            OrderFullfillment__e fulfillmentEvent =new OrderFullfillment__e(
+                    Fulfillment_Key__c =fulfillmentKey,
+                    Order_Id__c =String.valueOf(orderId),
                     Order_Number__c =ord.OrderNumber);
 
             // 9. Publish event
