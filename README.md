@@ -118,16 +118,19 @@ publishFailureEvent(
     retryCount
 );
 
-5.4
+### 5.4
+
 ## **TESTING AND TROUBLESHOOTING**
+
 Validation
 
-```Tested the end-to-end Platform Event flow from Apex event publishing to Flow execution.
-  Verified the event field mapping between Apex and the subscriber Flow.
-  Checked the failure-handling scenarios and notification process.
-  Worked on troubleshooting and refining the event flow to ensure reliable processing.
+```text
+Tested the end-to-end Platform Event flow from Apex event publishing to Flow execution.
+Verified the event field mapping between Apex and the subscriber Flow.
+Checked the failure-handling scenarios and notification process.
+Worked on troubleshooting and refining the event flow to ensure reliable processing.
 
 
-  6.5
+ ### 6.5
  ## **AGENTFORCE**
 ```Started learning Salesforce Agentforce and exploring its fundamentals, including Agentforce concepts, agent setup, topics, actions, and how AI agents can automate business processes within Salesforce.
