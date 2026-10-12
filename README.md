@@ -134,3 +134,12 @@ Worked on troubleshooting and refining the event flow to ensure reliable process
  ### 6.5
  ## **AGENTFORCE**
 ```Started learning Salesforce Agentforce and exploring its fundamentals, including Agentforce concepts, agent setup, topics, actions, and how AI agents can automate business processes within Salesforce.
+
+
+
+## 12.6
+
+```Created  a Order Status Agent, which fetches an Order’s status using its Order Number and uses deterministic conditions to control action execution.
+ Explored Agentforce subagent configuration, variables, action inputs/outputs, and conditional logic.
+ Currently working on the Account Status Agent to fetch Account records based on the custom Status picklist value (Active/Inactive).
+ Exploring how to configure Flow actions, subagent instructions, and deterministic conditions to make both agents work reliably.
