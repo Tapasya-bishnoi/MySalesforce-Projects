@@ -136,10 +136,67 @@ Worked on troubleshooting and refining the event flow to ensure reliable process
 ```Started learning Salesforce Agentforce and exploring its fundamentals, including Agentforce concepts, agent setup, topics, actions, and how AI agents can automate business processes within Salesforce.
 
 
-
 ## 12.6
 
 ```Created  a Order Status Agent, which fetches an Order’s status using its Order Number and uses deterministic conditions to control action execution.
  Explored Agentforce subagent configuration, variables, action inputs/outputs, and conditional logic.
  Currently working on the Account Status Agent to fetch Account records based on the custom Status picklist value (Active/Inactive).
  Exploring how to configure Flow actions, subagent instructions, and deterministic conditions to make both agents work reliably.
+
+### 12.7
+
+# Agentforce Service Agent – Human Escalation
+
+## Overview
+
+This project focuses on configuring a Salesforce Agentforce Service Agent to handle customer interactions and transfer conversations to a human support agent when required.
+
+## Features
+
+* **Agentforce Service Agent:** Configured a Service Agent to interact with users through a messaging channel.
+* **Subagent Configuration:** Explored subagents and their instructions to control agent behavior.
+* **Messaging Connection:** Configured messaging settings and adaptive response formats.
+* **Human Escalation:** Configured an Escalation Flow to support transferring conversations from the AI agent to a human support agent.
+* **Omni-Channel Integration:** Explored how Omni-Channel Flow can route escalated conversations to the appropriate support queue.
+* **Testing and Troubleshooting:** Tested escalation requests and investigated issues related to the agent's ability to initiate human handoff.
+
+## Salesforce Components
+
+* Agentforce Service Agent
+* Agentforce Subagents
+* Messaging Connection
+* Omni-Channel Flow
+* Queue and Routing Configuration
+* Messaging Session
+
+## Escalation Process
+
+1. A customer starts a conversation with the Agentforce Service Agent.
+2. The agent handles the customer's request.
+3. When human assistance is required, the agent should initiate the escalation process.
+4. The configured Omni-Channel Flow routes the conversation to the appropriate support queue.
+5. A human support agent receives the conversation, provided the routing configuration and agent availability are set up correctly.
+
+## Current Status
+
+* Service Agent configuration and messaging settings reviewed.
+* Escalation Flow selected in the messaging connection.
+* Subagent configuration and human handoff behavior investigated.
+* Further testing and troubleshooting are required to ensure that escalation requests successfully transfer conversations to a human agent.
+
+## Learning Outcomes
+
+* Understanding Agentforce Service Agent configuration.
+* Working with subagents and agent instructions.
+* Understanding messaging connections and escalation flows.
+* Learning how Omni-Channel supports human handoff.
+* Troubleshooting Agentforce runtime and routing issues.
+
+## Technologies Used
+
+* Salesforce Agentforce
+* Salesforce Flow
+* Omni-Channel
+* Messaging
+* Salesforce Service Cloud
+
