@@ -200,3 +200,10 @@ This project focuses on configuring a Salesforce Agentforce Service Agent to han
 * Messaging
 * Salesforce Service Cloud
 
+
+14.8
+## Today I completed the escalation task by troubleshooting . In this Task i created a agent which escalate the chat to the omni-channel on service console whenever chat escalates or issue is complex.
+## Also completed case creation task in which the agent match the email given by user to existing contact and create a case with given description by user problem.
+## Practice the Security levels of AI agent by doing Dynamic grounding example and data masking and learned about its type field , pattern based.
+## I will continue my  further topics like prompt template and audit trails.
+
