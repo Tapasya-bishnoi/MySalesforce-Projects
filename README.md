@@ -207,3 +207,9 @@ This project focuses on configuring a Salesforce Agentforce Service Agent to han
 ## Practice the Security levels of AI agent by doing Dynamic grounding example and data masking and learned about its type field , pattern based.
 ## I will continue my  further topics like prompt template and audit trails.
 
+15.9
+## Started creating  the Account Information prompt template using the Knowledge Answer template in Salesforce Prompt Builder.
+## Configured the Query input and Web Search Retriever, and added instructions to generate accurate company information without inventing missing details.
+## Also Configure my Org for Data cloud and agent analytics and reports which helps for audit trails.
+## Continue my learning on Prompt Builder.
+## Task status- In progress
