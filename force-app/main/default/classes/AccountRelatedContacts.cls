@@ -1,7 +1,7 @@
 public with sharing class AccountRelatedContacts {
    @InvocableMethod( label='Get Related Contact Names'
     description='Returns Contact names associated with the selected Account'
-    CapabilityType='PromptTemplateType://einstein_gpt__fieldGeneration'
+    CapabilityType='PromptTemplateType://einstein_gpt__fieldCompletion'
     )
     public static List<Response> getContactNames(List<Request> requests) {
         List<Response> responses = new List<Response>();
