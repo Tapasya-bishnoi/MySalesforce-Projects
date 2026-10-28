@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="The partner list of selected opportunity">
+        <div class="slds-m-around_medium">
+        <lightning-input label="Type Opportunity Name" value={oppValue} onchange={assignOpp} type="text"></lightning-input>
+            <lightning-button label="submit" onclick={fieldRelation}></lightning-button><br/>
+
+            <lightning-formatted-rich-text value={response}></lightning-formatted-rich-text>
+        </div>
+</lightning-card>
+<template if:true={isLoading}>
+     <div>
+     <lightning-spinner  alternative-text="Loading" size="small"></lightning-spinner>
+     </div>
+
+</template>
+    
+</template>
